@@ -37,7 +37,8 @@ public class Player {
         moveCounter++;
         
         //TODO this changes the speed of the snake
-        if(moveCounter>=5) {
+        // Checks move counter each tick, the lower the value the higher the speed
+        if(moveCounter>=3) {
             checkCollisionAndMove();
             moveCounter=0;
         }
