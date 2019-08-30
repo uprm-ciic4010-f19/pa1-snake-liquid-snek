@@ -19,6 +19,8 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
+    
+    private int moveCheck = 4; //this value decides the speed of the snake, default speed 4
 
     public String direction;//is your first name one?
 
@@ -38,7 +40,7 @@ public class Player {
         
         //TODO this changes the speed of the snake
         // Checks move counter each tick, the lower the value the higher the speed
-        if(moveCounter>=3) {
+        if(moveCounter>=moveCheck) {
             checkCollisionAndMove();
             moveCounter=0;
         }
@@ -62,6 +64,14 @@ public class Player {
         	handler.getWorld().body.addLast(new Tail(xCoord, yCoord, handler));
         }
         
+        // Subtracts 1 from moveCheck, subtracting will increase speed
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){
+            moveCheck--;
+        }
+        // Adds 1 to moveCheck, adding will decrease speed
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)){
+            moveCheck++;
+        }
         
         
         
