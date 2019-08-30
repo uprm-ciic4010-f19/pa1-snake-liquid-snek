@@ -63,8 +63,9 @@ public abstract class WorldBase {
 //            g.drawLine(i,0,i,handler.getHeight());
 //
 //        }
-
-
+    	
+    	
+    	
 
     }
 

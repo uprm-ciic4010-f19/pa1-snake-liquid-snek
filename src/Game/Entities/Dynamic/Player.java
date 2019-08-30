@@ -91,29 +91,37 @@ public class Player {
         int y = yCoord;
         switch (direction){
             case "Left":
-                if(xCoord==0){
-                    kill();
+                if(xCoord==0){               	
+                	// if player goes off screen to the left, appear on the right side
+                	xCoord = handler.getWorld().GridWidthHeightPixelCount-1;
+                    //kill();
                 }else{
                     xCoord--;
                 }
                 break;
             case "Right":
                 if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-                    kill();
+                	// if player goes off screen to the right, appear on the left side
+                	xCoord = 0;
+                	//kill();
                 }else{
                     xCoord++;
                 }
                 break;
             case "Up":
                 if(yCoord==0){
-                    kill();
+                	// if player goes off screen upwards, appear on the bottom
+                	yCoord = handler.getWorld().GridWidthHeightPixelCount-1;
+                	//kill();
                 }else{
                     yCoord--;
                 }
                 break;
             case "Down":
                 if(yCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-                    kill();
+                	// if player goes off screen downwards, appear on the top
+                	yCoord = 0;
+                	//kill();
                 }else{
                     yCoord++;
                 }
