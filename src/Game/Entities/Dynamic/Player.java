@@ -35,6 +35,8 @@ public class Player {
 
     public void tick(){
         moveCounter++;
+        
+        //TODO this changes the speed of the snake
         if(moveCounter>=5) {
             checkCollisionAndMove();
             moveCounter=0;
@@ -103,14 +105,23 @@ public class Player {
     public void render(Graphics g,Boolean[][] playeLocation){
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
+        	
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-                g.setColor(Color.WHITE);
-
-                if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
+                g.setColor(Color.GREEN);
+                
+                if(playeLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
                             (j*handler.getWorld().GridPixelsize),
                             handler.getWorld().GridPixelsize,
                             handler.getWorld().GridPixelsize);
+                }
+                g.setColor(Color.RED);
+                if(handler.getWorld().appleLocation[i][j]){
+                    g.fillRect((i*handler.getWorld().GridPixelsize),
+                    		(j*handler.getWorld().GridPixelsize),
+                            handler.getWorld().GridPixelsize,
+                            handler.getWorld().GridPixelsize);
+                    
                 }
 
             }
