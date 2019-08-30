@@ -50,6 +50,21 @@ public class Player {
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
             direction="Right";
         }
+        
+        // Adds a new tail portion when N is pressed, alternative code commented
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)){
+        	lenght++;
+//            Tail tail= null;
+//            tail = new Tail(this.xCoord,this.yCoord,handler);
+//            handler.getWorld().body.addLast(tail);
+//            handler.getWorld().playerLocation[tail.x][tail.y] = true;
+        	handler.getWorld().body.addLast(new Tail(xCoord, yCoord, handler));
+        }
+        
+        
+        
+        
+        
 
     }
 
