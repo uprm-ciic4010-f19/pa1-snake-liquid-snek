@@ -44,14 +44,20 @@ public class Player {
             checkCollisionAndMove();
             moveCounter=0;
         }
+        
+        // Checks for previous direction and prevents backtracking
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
-            direction="Up";
+        	if(direction != "Down")  
+        	direction="Up";
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)){
-            direction="Down";
+        	if(direction != "Up") 
+        	direction="Down";
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)){
-            direction="Left";
+        	if(direction != "Right") 
+        	direction="Left";
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
-            direction="Right";
+        	if(direction != "Left") 
+        	direction="Right"; 
         }
         
         // Adds a new tail portion when N is pressed, alternative code commented
