@@ -4,6 +4,7 @@ import Game.Entities.Dynamic.Player;
 import Game.Entities.Dynamic.Tail;
 import Game.Entities.Static.Apple;
 import Main.Handler;
+import javax.swing.JOptionPane;
 
 import java.awt.*;
 import java.util.LinkedList;
@@ -55,9 +56,20 @@ public abstract class WorldBase {
 
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
 
-            g.setColor(Color.white);
-            g.drawLine(0, i, handler.getWidth() , i);
-            g.drawLine(i,0,i,handler.getHeight());
+        	//SCORE BOARD SETTINGS
+        	g.setColor(new Color(255,175, 175));
+        	g.setFont(new Font ("Roboto", Font.BOLD, 25));
+        	g.drawString("Score: "+ String.valueOf(player.eatPoints), handler.getWidth()-500, handler.getHeight()-780);
+        	
+        	
+			
+        	
+
+        	
+        	//Al comentar lo escrito abajo, se desaparecen las lineas en el juego
+            //g.setColor(Color.blue);
+            //g.drawLine(0, i, handler.getWidth() , i);
+            //g.drawLine(i,0,i,handler.getHeight());
 
         }
 

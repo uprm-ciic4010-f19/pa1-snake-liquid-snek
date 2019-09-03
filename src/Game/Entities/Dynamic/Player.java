@@ -19,6 +19,8 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
+    public int eatCounter; //This variable will indicate how many apples the snake eats. 
+    public double eatPoints; 
 
     public String direction;//is your first name one?
 
@@ -30,6 +32,8 @@ public class Player {
         direction= "Right";
         justAte = false;
         lenght= 1;
+        eatCounter = 0;
+
 
     }
 
@@ -104,7 +108,9 @@ public class Player {
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-                g.setColor(Color.WHITE);
+                g.setColor(Color.RED);
+                
+                //The line above determines the tail's color (COMMENT)
 
                 if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
@@ -225,6 +231,8 @@ public class Player {
         }
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
+        eatCounter++; //Incrementing the eating counter 
+        eatPoints = Math.sqrt(2*eatCounter+1);
     }
 
     public void kill(){
