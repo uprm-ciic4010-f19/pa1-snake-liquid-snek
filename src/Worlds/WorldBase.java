@@ -4,6 +4,7 @@ import Game.Entities.Dynamic.Player;
 import Game.Entities.Dynamic.Tail;
 import Game.Entities.Static.Apple;
 import Main.Handler;
+import javax.swing.JOptionPane;
 
 import java.awt.*;
 import java.util.LinkedList;
@@ -59,10 +60,10 @@ public abstract class WorldBase {
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
 
         	//SCORE BOARD SETTINGS
+
         	g.setColor(new Color(225, 175, 175));
         	g.setFont(new Font("Century", Font.BOLD, 25));
         	g.drawString("Score: " + String.valueOf(player.eatPoints), handler.getWidth()-500, handler.getHeight()-780);
-        	
         	
         	
 			/* This code lines causes the grid lines to appear on the screen. 
@@ -70,6 +71,7 @@ public abstract class WorldBase {
 			 * g.drawLine(0, i, handler.getWidth() , i);
 			 * g.drawLine(i,0,i,handler.getHeight());
 			 */
+
         }
 
 

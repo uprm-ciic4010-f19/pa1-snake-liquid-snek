@@ -19,9 +19,9 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
-    public int eatCounter; //This variable will indicate how many apples the sneak eats.
+
+    public int eatCounter; //This variable will indicate how many apples the snake eats. 
     public double eatPoints; 
-    public boolean imminentCollision;
 
     public String direction;//is your first name one?
 
@@ -34,6 +34,7 @@ public class Player {
         justAte = false;
         lenght= 1;
         eatCounter = 0;
+
 
     }
 
@@ -110,6 +111,7 @@ public class Player {
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
+
                 g.setColor(Color.GREEN);
 
                 if(playerLocation[i][j]||handler.getWorld().appleLocation[i][j]){
@@ -231,8 +233,10 @@ public class Player {
         }
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
+
         eatCounter++; //Incrementing the eating counter
         eatPoints = (int) Math.sqrt(2*eatCounter+1);	//Look again if this score should be an int type or float type.
+
     }
 
     public void kill(){
