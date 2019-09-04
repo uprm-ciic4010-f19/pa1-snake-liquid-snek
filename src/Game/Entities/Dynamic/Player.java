@@ -19,6 +19,9 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
+    public int eatCounter; //This variable will indicate how many apples the sneak eats.
+    public double eatPoints; 
+    public boolean imminentCollision;
 
     public String direction;//is your first name one?
 
@@ -30,6 +33,7 @@ public class Player {
         direction= "Right";
         justAte = false;
         lenght= 1;
+        eatCounter = 0;
 
     }
 
@@ -51,12 +55,13 @@ public class Player {
 
     }
 
+	
     public void checkCollisionAndMove(){
         handler.getWorld().playerLocation[xCoord][yCoord]=false;
         int x = xCoord;
         int y = yCoord;
         switch (direction){
-            case "Left":
+            case "Left":	
                 if(xCoord==0){
                     kill();
                 }else{
@@ -88,6 +93,7 @@ public class Player {
         handler.getWorld().playerLocation[xCoord][yCoord]=true;
 
 
+        
         if(handler.getWorld().appleLocation[xCoord][yCoord]){
             Eat();
         }
@@ -100,13 +106,13 @@ public class Player {
 
     }
 
-    public void render(Graphics g,Boolean[][] playeLocation){
+    public void render(Graphics g,Boolean[][] playerLocation){
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-                g.setColor(Color.WHITE);
+                g.setColor(Color.GREEN);
 
-                if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
+                if(playerLocation[i][j]||handler.getWorld().appleLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
                             (j*handler.getWorld().GridPixelsize),
                             handler.getWorld().GridPixelsize,
@@ -225,6 +231,8 @@ public class Player {
         }
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
+        eatCounter++; //Incrementing the eating counter
+        eatPoints = (int) Math.sqrt(2*eatCounter+1);	//Look again if this score should be an int type or float type.
     }
 
     public void kill(){

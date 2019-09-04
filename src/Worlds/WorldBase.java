@@ -7,7 +7,7 @@ import Main.Handler;
 
 import java.awt.*;
 import java.util.LinkedList;
-
+import javax.swing.JOptionPane;
 
 /**
  * Created by AlexVR on 7/2/2018.
@@ -58,9 +58,13 @@ public abstract class WorldBase {
 
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
 
-            g.setColor(Color.white);
-            g.drawLine(0, i, handler.getWidth() , i);
-            g.drawLine(i,0,i,handler.getHeight());
+        	//SCORE BOARD SETTINGS
+        	g.setColor(new Color(225, 175, 175));
+        	g.setFont(new Font("Century", Font.BOLD, 25));
+        	g.drawString("Score: " + String.valueOf(player.eatPoints), handler.getWidth()-500, handler.getHeight()-780);
+           // g.setColor(Color.white);
+           //g.drawLine(0, i, handler.getWidth() , i);
+           // g.drawLine(i,0,i,handler.getHeight());
 
         }
 
