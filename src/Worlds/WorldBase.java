@@ -62,10 +62,14 @@ public abstract class WorldBase {
         	g.setColor(new Color(225, 175, 175));
         	g.setFont(new Font("Century", Font.BOLD, 25));
         	g.drawString("Score: " + String.valueOf(player.eatPoints), handler.getWidth()-500, handler.getHeight()-780);
-           // g.setColor(Color.white);
-           //g.drawLine(0, i, handler.getWidth() , i);
-           // g.drawLine(i,0,i,handler.getHeight());
-
+        	
+        	
+        	
+			/* This code lines causes the grid lines to appear on the screen. 
+			 * g.setColor(Color.white); 
+			 * g.drawLine(0, i, handler.getWidth() , i);
+			 * g.drawLine(i,0,i,handler.getHeight());
+			 */
         }
 
 
