@@ -26,6 +26,8 @@ public class Player {
 
     public String direction;//is your first name one?
 
+    public float currScore = 0;
+    
     public Player(Handler handler){
         this.handler = handler;
         xCoord = 0;
@@ -177,6 +179,11 @@ public class Player {
     }
 
     public void Eat(){
+    	// Calculates score as apple is eaten
+    	currScore += (float) Math.sqrt((2 * currScore) + 1);
+    	// Makes snake move faster when an apple is eaten
+    	moveCheck -=1;
+    	
         lenght++;
         Tail tail= null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
