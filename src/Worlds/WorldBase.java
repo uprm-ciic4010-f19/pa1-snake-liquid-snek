@@ -55,25 +55,23 @@ public abstract class WorldBase {
     //TODO This block controls the grid lines, add a debug mode here
     //change to a 64x64 grid
     
+    
+    
     public void render(Graphics g){
 
-        for (int i = 0; i <= 800; i = i + GridPixelsize) {
-
-        	//SCORE BOARD SETTINGS
-
-        	g.setColor(new Color(225, 175, 175));
-        	g.setFont(new Font("Century", Font.BOLD, 25));
-        	g.drawString("Score: " + String.valueOf(player.eatPoints), handler.getWidth()-500, handler.getHeight()-780);
-        	
-        	
-			/* This code lines causes the grid lines to appear on the screen. 
-			 * g.setColor(Color.white); 
-			 * g.drawLine(0, i, handler.getWidth() , i);
-			 * g.drawLine(i,0,i,handler.getHeight());
-			 */
-
-        }
-
+//        for (int i = 0; i <= 800; i = i + GridPixelsize) {
+//
+//            g.setColor(Color.white);
+//            g.drawLine(0, i, handler.getWidth() , i);
+//            g.drawLine(i,0,i,handler.getHeight());
+//
+//        }
+    	
+    	g.setColor(Color.BLUE);
+    	g.setFont(new Font("Century", Font.BOLD, 25));
+    	g.drawString("Score: " + player.currScore, 40, 20);
+    	
+    	
 
 
     }
