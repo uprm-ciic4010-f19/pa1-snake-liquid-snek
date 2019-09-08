@@ -11,12 +11,24 @@ public class Apple {
 
     public int xCoord;
     public int yCoord;
-
+    private static boolean stateOfApple = true;
+    
+    
     public Apple(Handler handler,int x, int y){
         this.handler=handler;
         this.xCoord=x;
         this.yCoord=y;
     }
 
-
+    public static void setGood(boolean state)
+    {
+    	stateOfApple = state;
+    }
+    
+    
+    public static boolean isGood()
+    {
+    	return stateOfApple;
+    }
+    
 }

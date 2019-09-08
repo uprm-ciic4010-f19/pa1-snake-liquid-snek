@@ -54,6 +54,8 @@ public abstract class WorldBase {
     //TODO This block controls the grid lines, add a debug mode here
     //change to a 64x64 grid
     
+    
+    
     public void render(Graphics g){
 
 //        for (int i = 0; i <= 800; i = i + GridPixelsize) {
