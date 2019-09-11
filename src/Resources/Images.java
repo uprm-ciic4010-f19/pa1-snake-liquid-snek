@@ -14,6 +14,9 @@ public class Images {
     public static BufferedImage[] butstart;
     public static BufferedImage title;
     public static BufferedImage Pause;
+    public static BufferedImage GameOverState;		//image for the Game Over's background 
+    public static BufferedImage reStartButt[];   		//image for the reset button 
+    public static BufferedImage QuitButton[];   		//image for the quit button 
     public static BufferedImage[] Resume;
     public static BufferedImage[] BTitle;
     public static BufferedImage[] Options;
@@ -25,13 +28,21 @@ public class Images {
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[2];
         Options = new BufferedImage[2];
+        reStartButt = new BufferedImage[2];		//for the restart button
+        QuitButton = new BufferedImage[2];		//for the quit button
+        
 
         try {
 
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
+            GameOverState = ImageIO.read(getClass().getResourceAsStream("/Buttons/GameOverState.jpg"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
+            reStartButt[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/reStartButt.png"));	//reStart button n
+            reStartButt[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/reStartButt.png"));	//reStart button after clicked?
+            QuitButton[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/QuitButton.png"));		//for the quit button
+            QuitButton[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/QuitButton.png"));	//for the quit button
             BTitle[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitle.png"));
             BTitle[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitleP.png"));
             Options[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Options.png"));
