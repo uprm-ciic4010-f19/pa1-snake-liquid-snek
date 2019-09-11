@@ -31,7 +31,7 @@ public class PauseState extends State {
         }));
         
         // QUIT Button 
-        uiManager.addObjects(new UIImageButton(215,680, 128, 64, Images.QuitButton, () -> {
+        uiManager.addObjects(new UIImageButton(215,480, 128, 64, Images.QuitButton, () -> {
             handler.getMouseManager().setUimanager(null);
             System.exit(1);
         }));
@@ -61,7 +61,7 @@ public class PauseState extends State {
 
 
     @Override public void render(Graphics g) {
-    	g.drawImage(Images.Pause,0,0,800,800,null); uiManager.Render(g);
+    	g.drawImage(Images.Pause,0,0,600,600,null); uiManager.Render(g);
 
     }
 

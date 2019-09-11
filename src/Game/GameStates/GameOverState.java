@@ -21,14 +21,14 @@ public class GameOverState extends State {
         handler.getMouseManager().setUimanager(uiManager);
     
      // RESTART Button 
-        uiManager.addObjects(new UIImageButton(600, 600, 128, 64, Images.reStartButt, () -> {
+        uiManager.addObjects(new UIImageButton(400, 400, 128, 64, Images.reStartButt, () -> {
             handler.getMouseManager().setUimanager(null);
             handler.getGame().reStart();	//Use the reStart method
             State.setState(handler.getGame().gameState);
         }));
         
         // QUIT Button 
-        uiManager.addObjects(new UIImageButton(600,680, 128, 64, Images.QuitButton, () -> {
+        uiManager.addObjects(new UIImageButton(400,480, 128, 64, Images.QuitButton, () -> {
             handler.getMouseManager().setUimanager(null);
             System.exit(1);
         }));
@@ -58,7 +58,7 @@ public class GameOverState extends State {
     }
 
     @Override public void render(Graphics g) {
-    	g.drawImage(Images.GameOverState,0,0,800,800,null); uiManager.Render(g);
+    	g.drawImage(Images.GameOverState,0,0,600,600,null); uiManager.Render(g);
 
     }
 }

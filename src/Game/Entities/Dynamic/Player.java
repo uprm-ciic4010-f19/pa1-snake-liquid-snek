@@ -170,8 +170,7 @@ public class Player {
 			handler.getWorld().body.addFirst(new Tail(x, y,handler));
 		}
 
-		// TODO for debugging, prints to screen current step count
-		System.out.println(stepCounter);
+		
 	}
 
 	public void render(Graphics g, Boolean[][] playeLocation){
