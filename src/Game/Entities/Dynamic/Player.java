@@ -148,7 +148,7 @@ public class Player {
 		}
 		handler.getWorld().playerLocation[xCoord][yCoord]=true;
 
-			///for loop that will identify if the snake hits herself 
+			///FOR LOOP
 
 		for(int i=0; i < handler.getWorld().body.size(); i++) { 
 			if((this.xCoord == handler.getWorld().body.get(i).x) && (this.yCoord ==
@@ -351,15 +351,15 @@ public class Player {
 			// Makes snake move slower when a bad apple is eaten
 			moveCheck +=1;
 			
+			// removes body segment
 			
-			//if the snake's lenght is 1 and eats a rotten apple, then the game over state is called 
 			if (lenght == 1) {
 				kill();
 				State.setState(handler.getGame().gameOverState);
 				handler.getGame().reStart();
 				
 			}
-			else {	// removes body segment
+			else {
 				lenght--;
 				handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y] = false;
 				handler.getWorld().body.removeLast();
